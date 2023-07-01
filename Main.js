@@ -3,8 +3,9 @@ const app = Vue.createApp({
         return {
             cart: 0,
             product: "T-Shirts",
+            brand: "Adidas",
             image: "./Assets/Images/3.jpeg",
-            InStock: true,
+            InStock: false,
             details: ["60% cotton", "20% wool", "20% polyester"],
             sizes: ['S', 'M', 'L', 'XL'],
             variants: [
@@ -28,5 +29,10 @@ const app = Vue.createApp({
         updateImage(variantImage) {
             this.image = variantImage
         }
+    },
+    computed: {
+        title() {
+            return this.brand + ' ' + this.product
+        } 
     }
 })

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue Mastery</title>
+    <title>T-Shirts For Sale</title>
     <link rel="icon" href="./Assets/Images/1.jpeg" type="image/x-icon" class="favicon">
 
     <!-- stylesheet -->
@@ -23,23 +23,34 @@
                     <img v-bind:src="image">
                 </div>
                 <div class="product-info">
-                    <h1>{{ product }}</h1>
+                    <h1>{{ title }}</h1>
                     <p v-if="InStock">In Stock</p>
                     <p v-else>Out of Stock</p>
                     <ul>
                         <li v-for="detail in details">{{ detail }}</li>
                     </ul>
-                    <div v-for="variant in variants" 
-                         :key="variant.id" 
-                         @mouseover="updateImage(variant.image)"
-                         class="color-circle">
-                         {{ variant.color }}
-                    </div>
                     <ul>
                         <li v-for="(size, index) in sizes" :key="index">{{ size }}</li>
                     </ul>
-                    <button class="button" @click="addToCart">Add To Cart</button>
-                    <button class="button" @click="removeFromCart">Remove From Cart</button>
+                    <div v-for="variant in variants" 
+                         :key="variant.id" 
+                         @mouseover="updateImage(variant.image)"
+                         class="color-circle"
+                         :style="{ backgroundColor: variant.color }">
+                    </div>
+                    
+                    <button 
+                        class="button"
+                        :class="{ disabledButton: !InStock }"
+                        :disabled="!InStock" 
+                        @click="addToCart">
+                        Add To Cart</button>
+                    <button 
+                        class="button"
+                        :class="{ disabledButton: !InStock }"
+                        :disabled="!InStock" 
+                        @click="removeFromCart">
+                        Remove From Cart</button>
                 </div>
             </div>
         </div>
