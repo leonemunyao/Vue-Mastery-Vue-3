@@ -64,11 +64,11 @@ data() {
 
 methods: {
     addToCart() {
-        this.cart += 1
+        this.$emit("add-to-cart")
     },
     removeFromCart() {
-        if (this.cart >= 1) {
-            this.cart -= 1
+        if (this.$emit = '') {
+            this.$emit -= 1
         }
     },
     updateVariant(index) {
