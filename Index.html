@@ -29,9 +29,9 @@
                     <ul>
                         <li v-for="detail in details">{{ detail }}</li>
                     </ul>
-                    <ul>
+                    <!-- <ul>
                         <li v-for="(size, index) in sizes" :key="index">{{ size }}</li>
-                    </ul>
+                    </ul> -->
                     <div v-for="(variant, index) in variants" 
                          :key="variant.id" 
                          @mouseover="updateVariant(index)"

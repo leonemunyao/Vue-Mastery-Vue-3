@@ -6,7 +6,7 @@ const app = Vue.createApp({
             brand: "Adidas",
             selectedVariant: 0,
             details: ["60% cotton", "20% wool", "20% polyester"],
-            sizes: ['S', 'M', 'L', 'XL'],
+            // sizes: ['S', 'M', 'L', 'XL'],
             variants: [
                 { id: 3340, color: "red", image: "./Assets/Images/3.jpeg", quantity: 40 },
                 { id: 3341, color: "black", image: "./Assets/Images/2.jpeg" , quantity: 0 },
@@ -40,4 +40,4 @@ const app = Vue.createApp({
             return this.variants[this.selectedVariant].quantity 
         }  
     }
-})
+}) 
